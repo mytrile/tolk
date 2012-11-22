@@ -48,7 +48,7 @@ module Tolk
       end
 
       def secondary_locales
-        all - [primary_locale]
+        all
       end
 
       def dump_all(to = self.locales_config_path)

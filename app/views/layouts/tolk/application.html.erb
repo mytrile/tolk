@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Tolk</title>
+  <title>Translations Dashboard</title>
 
   <%= javascript_include_tag "tolk/application" %>
   <%= stylesheet_link_tag "tolk/application" %>
@@ -13,7 +13,22 @@
 <body>
   <div id="container">
     <div id="head">
-      <h1><span class="home"><%= link_to "Tolk", root_path %></span><% if @locale.present? %><span class="locale"><%= link_to @locale.language_name, locale_path(@locale) %></span><% end %></h1>
+      <div class="home-buttons">
+        <span class="home">
+          <%= link_to "Translations Dashboard", root_path %>
+        </span>
+        <% if @locale.present? %>
+          <span class="locale">
+            <%= link_to @locale.language_name, locale_path(@locale) %>
+          </span>
+        <% end %>
+      </div>
+      <div class="dump-all-button">
+        <span class="save">
+          <%= link_to "Update translation files", dump_all_locales_path %>
+        </span>
+      </div>
+      <div style="clear:both"></div>
     </div>
     <%= yield %>
   </div>

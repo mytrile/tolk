@@ -69,9 +69,31 @@ div#head a {
   text-decoration: none;
 }
 
+div#head span.save a {
+  color: #70FFAC;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #333;
+  padding: 8px 10px;
+  margin-right: 1px;
+  padding-left: 12px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
 div#head span {
   padding: 8px 6px;
   margin-right: 1px;
+}
+
+div#head .home-buttons {
+  float: left;
+}
+
+div#head .dump-all-button {
+  float: right;
 }
 
 div#head span.home {

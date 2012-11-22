@@ -1,7 +1,6 @@
 module Tolk
   class LocalesController < Tolk::ApplicationController
     before_filter :find_locale, :only => [:show, :all, :update, :updated]
-    before_filter :ensure_no_primary_locale, :only => [:all, :update, :show, :updated]
 
     def index
       @locales = Tolk::Locale.secondary_locales.sort_by(&:language_name)
@@ -35,6 +34,11 @@ module Tolk
     def create
       Tolk::Locale.create!(params[:tolk_locale])
       redirect_to :action => :index
+    end
+
+    def dump_all
+      Tolk::Locale.dump_all
+      redirect_to :back
     end
 
     private

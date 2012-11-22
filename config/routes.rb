@@ -5,6 +5,9 @@ Tolk::Engine.routes.draw do
       get :all
       get :updated
     end
+    collection do
+      get :dump_all
+    end
   end
   resource :search
 end
